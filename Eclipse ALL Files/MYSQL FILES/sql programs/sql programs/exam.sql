@@ -1,0 +1,14 @@
+use sqlpractice;
+select * from Emp;
+select * from Dept;
+select * from Dept natural join Emp;
+select * from Dept,emp where Dept.Deptno=Emp.Deptno;
+select * from Dept inner join Emp on Dept.Deptno=Emp.Deptno;
+select * from Dept left join Emp on Dept.Deptno=Emp.Deptno;
+select * from Dept right join Emp on Dept.Deptno=Emp.Deptno;
+select * from Dept cross join Emp ;
+select max(sal) from Emp;
+select * from Emp where sal=(select sal from Emp where ename='smith');
+select ename from emp where sal=max(sal);
+select ename from emp where sal=(select max(sal) from Emp);
+select max(sal) from Emp where sal < (select max(sal) from Emp);
